@@ -4,112 +4,183 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bayt-ul-Hunur</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <style>
+    :root {
+      --primary: #00bfff;
+      --dark: #0f0f0f;
+      --light: #1c1c1c;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #121212;
-      color: white;
+      background: var(--dark);
+      color: #f0f0f0;
     }
 
     header {
+      background: var(--light);
+      padding: 2rem 1rem;
       text-align: center;
-      padding: 40px 0;
-      background-color: #1e1e1e;
-      box-shadow: 0 4px 20px rgba(0, 255, 255, 0.2);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     }
 
     header img {
-      width: 180px;
-      height: auto;
-      filter: drop-shadow(0 0 10px cyan);
+      max-width: 280px;
+      width: 90%;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
     }
 
-    section {
-      margin: 40px auto;
-      max-width: 800px;
-      background-color: #1f1f1f;
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    .section {
+      padding: 3rem 1.5rem;
+      max-width: 1200px;
+      margin: auto;
     }
 
-    h2 {
-      color: #00ffff;
-      margin-bottom: 15px;
+    .about, .contact {
+      background: #1a1a1a;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+      margin-bottom: 2rem;
+    }
+
+    .about h2, .contact h2, .services h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
     }
 
     .card {
-      background: #2a2a2a;
-      padding: 20px;
-      border-radius: 15px;
-      margin-bottom: 20px;
-      box-shadow: 0 0 15px rgba(0, 255, 255, 0.15);
+      background: #222;
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .icon {
-      font-size: 40px;
-      color: #00ffff;
-      margin-bottom: 10px;
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.5);
+    }
+
+    .card i {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      margin-top: 1rem;
+      border-radius: 10px;
+    }
+
+    .whatsapp-button {
+      display: inline-block;
+      margin-top: 1rem;
+      background-color: #25D366;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .whatsapp-button:hover {
+      background-color: #1ebe5d;
+    }
+
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
     }
 
     a {
-      color: #00ffff;
+      color: var(--primary);
       text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="logo.jpg" alt="Bayt-ul-Hunur Logo" />
+    <!-- Only logo shown -->
+    <img src="logo.png" alt="Bayt-ul-Hunur Logo">
   </header>
 
-  <section>
+  <section class="section about">
     <h2>About Us</h2>
     <p>
-      <strong>Bayt-ul-Hunur</strong> provides professional electrician, plumbing, security, and interior solutions services. We bring quality, innovation, and safety to every project. Whether it's a simple repair or a complete interior transformation, our expert team ensures lasting results.
+      At <strong>Bayt-ul-Hunur</strong>, we specialize in delivering top-quality solutions that transform and protect your space. Whether you need expert electrical work, reliable plumbing, advanced security systems, or creative interior design, we offer trusted services tailored to your needs.
+    </p>
+    <p>
+      With years of hands-on experience, we take pride in our craftsmanship, attention to detail, and commitment to customer satisfaction. From small fixes to large-scale transformations, we handle every project with professionalism and care.
     </p>
   </section>
 
-  <section>
+  <section class="section services">
     <h2>Our Services</h2>
-
-    <div class="card">
-      <div class="icon">⚡</div>
-      <h3>Electrical Services</h3>
-      <p>Wiring, lighting, fault fixing, panel upgrades, and safety inspections.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">🛁</div>
-      <h3>Plumbing Services</h3>
-      <p>Leak repairs, pipe installations, bathroom and kitchen plumbing.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">🔐</div>
-      <h3>Security Systems</h3>
-      <p>CCTV installation, alarm systems, access control, and monitoring.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">🎨</div>
-      <h3>Interior Solutions</h3>
-      <p>Design, painting, furniture, and complete space transformation.</p>
+    <div class="services-grid">
+      <div class="card">
+        <i class="fas fa-bolt"></i>
+        <h3>Electrical Services</h3>
+        <p>Wiring, lighting, fault fixing, panel upgrades, and safety inspections.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-tools"></i>
+        <h3>Plumbing Services</h3>
+        <p>Pipe installations, leak repairs, fixture fitting, and plumbing diagnostics.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Security Solutions</h3>
+        <p>CCTV installation, alarm systems, access control, and smart home security.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-paint-roller"></i>
+        <h3>Interior Solutions</h3>
+        <p>Custom design, space planning, painting, décor, and full renovations.</p>
+      </div>
     </div>
   </section>
 
-  <section>
-    <h2>Work Gallery</h2>
-    <p>Photos: <a href="photos/">View Work Photos</a></p>
-    <p>Videos: <a href="videos/">View Work Videos</a></p>
-  </section>
-
-  <section>
+  <section class="section contact">
     <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:mirzaaa129@gmail.com">mirzaaa129@gmail.com</a></p>
+    <p><strong>Email:</strong> <a href="mailto:mirzaaa129@gmail.com">mirzaaa129@gmail.com</a></p>
+    <p><strong>Phone:</strong> <a href="tel:7006527428">7006527428</a>, <a href="tel:9858787822">9858787822</a>, <a href="tel:7006485200">7006485200</a></p>
+    <p><strong>Location:</strong> Near National Highway, Amargarh, Sopore, Baramulla, Jammu and Kashmir</p>
+    <a class="whatsapp-button" href="https://wa.me/7006527428" target="_blank">
+      <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+    </a>
+    <iframe src="https://www.google.com/maps?q=Amargarh+Sopore+Baramulla+Jammu+and+Kashmir&output=embed"></iframe>
   </section>
+
+  <footer>
+    &copy; 2025 Bayt-ul-Hunur. All rights reserved.
+  </footer>
 
 </body>
 </html>
