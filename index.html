@@ -2,80 +2,86 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bayt-ul-Hunur</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <style>
     :root {
-      --primary: #007BFF;
-      --dark: #1c1c1c;
-      --light: #f9f9f9;
+      --primary: #00bfff;
+      --dark: #0f0f0f;
+      --light: #1c1c1c;
     }
+
     * {
       box-sizing: border-box;
     }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: var(--light);
-      color: #333;
-    }
-    header {
       background: var(--dark);
-      color: white;
+      color: #f0f0f0;
+    }
+
+    header {
+      background: var(--light);
       padding: 2rem 1rem;
       text-align: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     }
+
     header img {
-      width: 180px;
-      max-width: 90%;
-      margin-bottom: 1rem;
+      max-width: 280px;
+      width: 90%;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      font-size: 1.1rem;
-      color: #ccc;
-    }
+
     .section {
       padding: 3rem 1.5rem;
       max-width: 1200px;
       margin: auto;
     }
+
     .about, .contact {
-      background: white;
-      border-radius: 12px;
+      background: #1a1a1a;
+      border-radius: 16px;
       padding: 2rem;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
       margin-bottom: 2rem;
     }
+
     .about h2, .contact h2, .services h2 {
       color: var(--primary);
       margin-bottom: 1rem;
     }
+
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
     }
+
     .card {
-      background: white;
+      background: #222;
       padding: 2rem;
       border-radius: 12px;
       text-align: center;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .card:hover {
       transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.5);
     }
+
     .card i {
       font-size: 2.5rem;
       color: var(--primary);
       margin-bottom: 1rem;
     }
+
     iframe {
       width: 100%;
       height: 300px;
@@ -83,6 +89,7 @@
       margin-top: 1rem;
       border-radius: 10px;
     }
+
     .whatsapp-button {
       display: inline-block;
       margin-top: 1rem;
@@ -94,30 +101,34 @@
       text-decoration: none;
       transition: background-color 0.3s;
     }
+
     .whatsapp-button:hover {
       background-color: #1ebe5d;
     }
+
     footer {
-      background: var(--dark);
-      color: #ddd;
+      background: #111;
+      color: #aaa;
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
     }
+
     a {
       color: var(--primary);
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <img src="logo.png" alt="Bayt-ul-Hunur Logo" />
-    <h1>Bayt-ul-Hunur</h1>
-    <p>Electrician | Plumbing | Security | Interior Solutions</p>
+    <!-- Only logo shown -->
+    <img src="logo.png" alt="Bayt-ul-Hunur Logo">
   </header>
 
   <section class="section about">
@@ -170,5 +181,6 @@
   <footer>
     &copy; 2025 Bayt-ul-Hunur. All rights reserved.
   </footer>
+
 </body>
 </html>
