@@ -4,265 +4,183 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bayt-ul-Hunur</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <style>
-    /* Reset and basic styling */
+    :root {
+      --primary: #00bfff;
+      --dark: #0f0f0f;
+      --light: #1c1c1c;
+    }
+
     * {
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
     }
+
     body {
+      margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #121212;
-      color: #fff;
-      line-height: 1.6;
+      background: var(--dark);
+      color: #f0f0f0;
     }
-    
-    /* Navigation styles */
-    nav {
-      background-color: #1e1e1e;
-      padding: 1rem;
-      position: relative;
+
+    header {
+      background: var(--light);
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     }
-    .menu-toggle {
-      font-size: 1.5rem;
-      cursor: pointer;
-      display: none;
-      color: #00ffff;
+
+    header img {
+      max-width: 280px;
+      width: 90%;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
     }
-    .nav-links {
-      list-style: none;
-      display: flex;
-      justify-content: center;
+
+    .section {
+      padding: 3rem 1.5rem;
+      max-width: 1200px;
+      margin: auto;
     }
-    .nav-links li {
-      margin: 0 15px;
-      position: relative;
+
+    .about, .contact {
+      background: #1a1a1a;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+      margin-bottom: 2rem;
     }
-    .nav-links li a {
+
+    .about h2, .contact h2, .services h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: #222;
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.5);
+    }
+
+    .card i {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      margin-top: 1rem;
+      border-radius: 10px;
+    }
+
+    .whatsapp-button {
+      display: inline-block;
+      margin-top: 1rem;
+      background-color: #25D366;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      font-size: 1rem;
       text-decoration: none;
-      color: #00ffff;
-      font-weight: bold;
+      transition: background-color 0.3s;
     }
-    /* Dropdown menu styling */
-    .nav-links li ul {
-      display: none;
-      position: absolute;
-      top: 35px;
-      left: 0;
-      background: #1e1e1e;
-      padding: 0.5rem;
-      border-radius: 5px;
-      list-style: none;
-      z-index: 100;
+
+    .whatsapp-button:hover {
+      background-color: #1ebe5d;
     }
-    .nav-links li:hover > ul {
-      display: block;
-    }
-    .nav-links li ul li {
-      margin: 5px 0;
-    }
-    .nav-links li ul li a {
-      font-weight: normal;
+
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 1rem;
       font-size: 0.9rem;
     }
-    
-    /* Responsive - mobile */
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: #1e1e1e;
-      }
-      .nav-links li {
-        margin: 10px 0;
-        text-align: center;
-      }
-      .nav-links li ul {
-        position: static;
-      }
-      .nav-active {
-        display: flex;
-      }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
     }
-    
-    /* Header and logo */
-    header {
-      text-align: center;
-      padding: 50px 20px;
-      background-color: #1e1e1e;
-      box-shadow: 0 4px 20px rgba(0,255,255,0.2);
-    }
-    header img {
-      width: 180px;
-      height: auto;
-      filter: drop-shadow(0 0 10px cyan);
-    }
-    
-    /* Sections */
-    section {
-      margin: 40px auto;
-      max-width: 800px;
-      background-color: #1f1f1f;
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(0,255,255,0.2);
-    }
-    h1, h2 {
-      color: #00ffff;
-      margin-bottom: 15px;
-    }
-    p {
-      margin-bottom: 15px;
-    }
-    
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #1e1e1e;
-      color: #888;
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="home/index.html">Home</a></li>
-      <li><a href="contact-us/index.html">Contact Us</a></li>
-      <li><a href="location/index.html">Location</a></li>
-      <li>
-        <a href="#">Services</a>
-        <ul>
-          <li><a href="services/plumbing/index.html">Plumbing</a></li>
-          <li>
-            <a href="#">Security</a>
-            <ul>
-              <li><a href="services/security/cctv/index.html">CCTV</a></li>
-              <li><a href="services/security/fire-alarm/index.html">Fire Alarm</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">Interior Design</a>
-            <ul>
-              <li><a href="services/interior/bathroom/index.html">Bathroom</a></li>
-              <li><a href="services/interior/lobby/index.html">Lobby</a></li>
-              <li><a href="services/interior/bedrooms/index.html">Bedrooms</a></li>
-              <li><a href="services/interior/front-look/index.html">Front Look</a></li>
-              <li><a href="services/interior/hall/index.html">Hall</a></li>
-              <li><a href="services/interior/living-area/index.html">Living Area</a></li>
-              <li><a href="services/interior/hamam/index.html">Hamam</a></li>
-              <li><a href="services/interior/laundry/index.html">Laundry</a></li>
-              <li><a href="services/interior/pantry/index.html">Pantry</a></li>
-            </ul>
-          </li>
-          <li><a href="services/electric/index.html">Electric</a></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
-
-  <!-- Header with logo -->
   <header>
-    <img src="images/logo.jpg" alt="Bayt-ul-Hunur Logo">
-    <h1>Welcome to Bayt-ul-Hunur</h1>
+    <!-- Only logo shown -->
+    <img src="logo.png" alt="Bayt-ul-Hunur Logo">
   </header>
 
-  <!-- About Section -->
-  <section>
+  <section class="section about">
     <h2>About Us</h2>
     <p>
-      <strong>Bayt-ul-Hunur</strong> provides professional electrician, plumbing, security, and interior solutions services. We bring quality, innovation, and safety to every project. Whether it's a simple repair or a complete interior transformation, our expert team ensures lasting results.
+      At <strong>Bayt-ul-Hunur</strong>, we specialize in delivering top-quality solutions that transform and protect your space. Whether you need expert electrical work, reliable plumbing, advanced security systems, or creative interior design, we offer trusted services tailored to your needs.
+    </p>
+    <p>
+      With years of hands-on experience, we take pride in our craftsmanship, attention to detail, and commitment to customer satisfaction. From small fixes to large-scale transformations, we handle every project with professionalism and care.
     </p>
   </section>
 
-  <!-- Services Section -->
-  <section>
+  <section class="section services">
     <h2>Our Services</h2>
-    <!-- You could include brief details or links to full pages for each service -->
-    <p>Explore our range of services by selecting from the menu above.</p>
+    <div class="services-grid">
+      <div class="card">
+        <i class="fas fa-bolt"></i>
+        <h3>Electrical Services</h3>
+        <p>Wiring, lighting, fault fixing, panel upgrades, and safety inspections.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-tools"></i>
+        <h3>Plumbing Services</h3>
+        <p>Pipe installations, leak repairs, fixture fitting, and plumbing diagnostics.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Security Solutions</h3>
+        <p>CCTV installation, alarm systems, access control, and smart home security.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-paint-roller"></i>
+        <h3>Interior Solutions</h3>
+        <p>Custom design, space planning, painting, décor, and full renovations.</p>
+      </div>
+    </div>
   </section>
 
-  <!-- Work Gallery Section -->
-  <section>
-    <h2>Work Gallery</h2>
-    <p>Photos: <a href="photos/index.html">View Work Photos</a></p>
-    <p>Videos: <a href="videos/index.html">View Work Videos</a></p>
-  </section>
-
-  <!-- Contact Section -->
-  <section>
+  <section class="section contact">
     <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:mirzaaa129@gmail.com">mirzaaa129@gmail.com</a></p>
-    <p>Phone: 7006527428, 9858787822, 7006485200</p>
-    <p>Location: Near National Highway, Amargarh, Sopore, Baramulla, Jammu and Kashmir</p>
+    <p><strong>Email:</strong> <a href="mailto:mirzaaa129@gmail.com">mirzaaa129@gmail.com</a></p>
+    <p><strong>Phone:</strong> <a href="tel:7006527428">7006527428</a>, <a href="tel:9858787822">9858787822</a>, <a href="tel:7006485200">7006485200</a></p>
+    <p><strong>Location:</strong> Near National Highway, Amargarh, Sopore, Baramulla, Jammu and Kashmir</p>
+    <a class="whatsapp-button" href="https://wa.me/7006527428" target="_blank">
+      <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+    </a>
+    <iframe src="https://www.google.com/maps?q=Amargarh+Sopore+Baramulla+Jammu+and+Kashmir&output=embed"></iframe>
   </section>
 
-  <!-- Footer -->
   <footer>
     &copy; 2025 Bayt-ul-Hunur. All rights reserved.
   </footer>
 
-  <!-- Hamburger menu script -->
-  <script>
-    function toggleMenu() {
-      var navLinks = document.getElementById("navLinks");
-      if (navLinks.classList.contains("nav-active")) {
-        navLinks.classList.remove("nav-active");
-      } else {
-        navLinks.classList.add("nav-active");
-      }
-    }
-  </script>
 </body>
 </html>
-"""
-
-# Define the base directory for the site
-base_dir = "/mnt/data/Bayt-ul-Hunur-Website"
-if not os.path.exists(base_dir):
-    os.makedirs(base_dir)
-
-# Create subfolders for content
-subfolders = [
-    "images", "videos", "photos", "home", "contact-us", "location",
-    "services/plumbing", "services/security/cctv", "services/security/fire-alarm",
-    "services/interior/bathroom", "services/interior/lobby", "services/interior/bedrooms",
-    "services/interior/front-look", "services/interior/hall", "services/interior/living-area",
-    "services/interior/hamam", "services/interior/laundry", "services/interior/pantry",
-    "services/electric"
-]
-for folder in subfolders:
-    os.makedirs(os.path.join(base_dir, folder), exist_ok=True)
-
-# Save the main HTML file as index.html in base_dir
-index_path = os.path.join(base_dir, "index.html")
-with open(index_path, "w") as f:
-    f.write(html_content)
-
-# For demonstration, add a placeholder logo image file in images folder
-logo_source = "/mnt/data/file-JDxMboYDtzTkqc3Axf4eXG"  # Uploaded logo file (ensure this exists)
-logo_dest = os.path.join(base_dir, "images", "logo.jpg")
-try:
-    shutil.copyfile(logo_source, logo_dest)
-except Exception as e:
-    with open(logo_dest, "wb") as f:
-        f.write(b"")  # create an empty file as placeholder if copy fails
-
-# Zip the whole folder structure
-zip_file_path = f"{base_dir}.zip"
-with ZipFile(zip_file_path, "w") as zipf:
-    for root, dirs, files in os.walk(base_dir):
-        for file in files:
-            full_path = os.path.join(root, file)
-            arcname = os.path.relpath(full_path, base_dir)
-            zipf.write(full_path, arcname)
-
-zip_file_path
